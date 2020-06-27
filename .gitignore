@@ -1,0 +1,6 @@
+data/
+simple
+*.c
+scanomap
+*.actual
+*.expected

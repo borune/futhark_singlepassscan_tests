@@ -5,22 +5,25 @@ SIZES = 1 7 13 42 8704 32768 524288 1048576
 # 33 1024 1025 2048 8704
 
 # all: compile compile-scanomap_2-opencl dump-scanomap_2 test
-all: compile compile-simple-opencl test-simple
+all: compile test-simple test-scanomap
 
 allcuda: compile compile-simple-cuda dump-cuda test-cuda
 
 compile:
 	cd ../futhark && stack install --fast
 
-compile-simple-opencl:
-	$(FUTHARK) opencl simple.fut
-
 test-simple:
 	$(FUTHARK) test --backend=opencl simple.fut
+
+test-scanomap:
+	$(FUTHARK) test --backend=opencl scanomap.fut
 
 # compile-scanomap_2-opencl:
 # 	$(FUTHARK) opencl tests/scan/scanomap_2.fut
 
+
+compile-simple-opencl:
+	$(FUTHARK) opencl simple.fut
 
 compile-simple-cuda:
 	$(FUTHARK) cuda tests/scan/simple.fut
@@ -44,7 +47,7 @@ dump-fused:
 dump-simple:
 	./simple --dump-opencl simple-kernel.c
 
-compare: 
+compare:
 	futhark opencl compare.fut
 
 load-simple: compare
