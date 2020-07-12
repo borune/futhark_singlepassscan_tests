@@ -21,6 +21,11 @@ test-scanomap:
 # compile-scanomap_2-opencl:
 # 	$(FUTHARK) opencl tests/scan/scanomap_2.fut
 
+benchit:
+	$(FUTHARK) bench --backend=opencl -v scan-bench.fut
+
+
+
 
 compile-simple-opencl:
 	$(FUTHARK) opencl simple.fut
