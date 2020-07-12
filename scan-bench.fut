@@ -1,12 +1,12 @@
 -- ==
--- entry: map
+-- entry: mapplus
 -- random input { [1000]i32 } auto output
 -- random input { [10000]i32 } auto output
 -- random input { [100000]i32 } auto output
 -- random input { [1000000]i32 } auto output
 -- random input { [10000000]i32 } auto output
 -- random input { [100000000]i32 } auto output
-let map (input:[]i32) =
+let mapplus (input:[]i32) =
     map (+2) input
 
 -- ==
