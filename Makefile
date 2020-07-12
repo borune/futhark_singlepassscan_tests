@@ -26,7 +26,7 @@ benchit:
 
 compare:
 	$(FUTHARK) c compare.fut
-	cat data/[1000000]i32.in data/scan-bench:mapplus-[1000000]i32.out | ./compare
+	cat data/[100000000]i32.in data/scan-bench:scanplus-[100000000]i32.out | ./compare
 
 
 compile-simple-opencl:
