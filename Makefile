@@ -24,7 +24,9 @@ test-scanomap:
 benchit:
 	$(FUTHARK) bench --backend=opencl scan-bench.fut
 
-
+compare:
+	$(FUTHARK) c compare.fut
+	cat data/[1000000]i32.in data/scan-bench:mapplus-[1000000]i32.out | ./compare
 
 
 compile-simple-opencl:
