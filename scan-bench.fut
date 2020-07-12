@@ -6,7 +6,7 @@
 -- random input { [1000000]i32 } auto output
 -- random input { [10000000]i32 } auto output
 -- random input { [100000000]i32 } auto output
-let mapplus (input:[]i32) =
+entry mapplus (input:[]i32) =
     map (+2) input
 
 -- ==
@@ -17,7 +17,7 @@ let mapplus (input:[]i32) =
 -- random input { [1000000]i32 } auto output
 -- random input { [10000000]i32 } auto output
 -- random input { [100000000]i32 } auto output
-let scanplus (input:[]i32) =
+entry scanplus (input:[]i32) =
     scan (+) 0 input
 
 -- ==
@@ -28,7 +28,7 @@ let scanplus (input:[]i32) =
 -- random input { [1000000]i32 } auto output
 -- random input { [10000000]i32 } auto output
 -- random input { [100000000]i32 } auto output
-let scanmul (input:[]i32) =
+entry scanmul (input:[]i32) =
     scan (*) 0 input
 
 -- =
