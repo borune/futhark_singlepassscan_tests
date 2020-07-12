@@ -54,8 +54,8 @@ dump-fused:
 dump-simple:
 	./simple --dump-opencl simple-kernel.c
 
-compare:
-	futhark opencl compare.fut
+# compare:
+# 	futhark opencl compare.fut
 
 load-simple: compare
 	./simple --load-opencl simple-kernel.c < kA-131072.data > result-131072.data
