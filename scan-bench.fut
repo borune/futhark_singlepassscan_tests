@@ -28,8 +28,8 @@ entry scanplus (input:[]i32) =
 -- random input { [1000000]i32 } auto output
 -- random input { [10000000]i32 } auto output
 -- random input { [100000000]i32 } auto output
-let scanomap (input:[]i32) =
-    let arr = map (\x -> x*2) input
+entry scanomap (input:[]i32) =
+    let arr = map (*2) input
     let arr' = scan (+) 0 arr
     in (arr, arr')
 
