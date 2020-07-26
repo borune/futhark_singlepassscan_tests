@@ -22,7 +22,7 @@ test-scanomap:
 # 	$(FUTHARK) opencl tests/scan/scanomap_2.fut
 
 benchit:
-	$(FUTHARK) bench --backend=opencl --runs=1 scan-bench.fut
+	$(FUTHARK) bench --backend=opencl --runs=10 scan-bench.fut
 
 compare:
 	$(FUTHARK) c compare.fut
