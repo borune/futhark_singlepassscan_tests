@@ -8,7 +8,8 @@ let main [n] (as:[n]i32) (bs:[n]i32):(bool,i32,i32,i32,i32,i32,i32,i32) =
   let original = -1
   let expected = -1
   let actually = -1
-  let mod = if theLength > 0 then
+  let mod = if theLength > 0
+    then
       first = head filt
       original = as[head filt]
       expected = sas[head filt]
