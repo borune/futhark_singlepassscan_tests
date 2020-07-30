@@ -1,4 +1,7 @@
+-- ==
 -- entry: mapplus
+-- random input { [10]i32 } auto output
+-- random input { [100]i32 } auto output
 -- random input { [1000]i32 } auto output
 -- random input { [10000]i32 } auto output
 -- random input { [100000]i32 } auto output
