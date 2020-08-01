@@ -24,6 +24,9 @@ test-scanomap:
 benchit:
 	$(FUTHARK) bench --backend=cuda --runs=1 scan-bench.fut
 
+benchcl:
+	$(FUTHARK) bench --backend=cuda --runs=1 scan-bench.fut
+
 compare:
 	$(FUTHARK) c compare.fut
 	cat data/[100000000]i32.in data/scan-bench:scanplus-[100000000]i32.out | ./compare
