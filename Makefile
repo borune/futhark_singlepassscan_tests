@@ -25,7 +25,7 @@ benchit:
 	$(FUTHARK) bench --backend=cuda --runs=1 scan-bench.fut
 
 benchcl:
-	$(FUTHARK) bench --backend=cuda --runs=1 scan-bench.fut
+	$(FUTHARK) bench --backend=opencl --runs=1 scan-bench.fut
 
 compare:
 	$(FUTHARK) c compare.fut
