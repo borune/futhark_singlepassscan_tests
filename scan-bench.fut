@@ -41,6 +41,6 @@ entry mapplus (input:[]i32) =
 -- ==
 -- entry: par_i32
 -- random input { [1000]i32 } auto output
-entry par_i32 [n] (arr: [n]i32) : (i32, [n]i32) =
+entry par_i32 [n] (arr: [n]i32) : ([]i32, [n]i32) =
     partition (\x -> (x % 2) == 0i32) arr
 
