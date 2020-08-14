@@ -1,5 +1,6 @@
 import "radixsort"
----- ==
+import "mergesort"
+-- ==
 -- entry: scanplus
 -- random input { [1000]i32 } auto output
 entry scanplus (input:[]i32) =
@@ -48,5 +49,10 @@ entry par_i32 [n] (arr: [n]i32) : ([]i32, []i32) =
 -- ==
 -- entry: radixsort_i32
 -- random input { [1000]i32 } auto output
-
 entry radixsort_i32 = radix_sort_int i32.num_bits i32.get_bit
+
+
+-- ==
+-- entry: mergesort_i32
+-- random input { [1000]i32 } auto output
+entry mergesort_i32 (xs: []i32) = merge_sort (i32.<=) xs
