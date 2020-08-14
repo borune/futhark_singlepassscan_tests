@@ -1,6 +1,6 @@
 import "radixsort"
 import "mergesort"
-import "tridagpar"
+-- import "tridagpar"
 
 -- ==
 -- entry: scanplus_i8
@@ -140,8 +140,8 @@ entry radixsort_i64 = radix_sort_int i64.num_bits i64.get_bit
 entry mergesort_i64 (xs: []i64) = merge_sort (i64.<=) xs
 
 
--- ==
+-- =/=
 -- entry: tridagPar_f32
 -- random input { [1000000]f32 [1000000]f32 [1000000]f32 [1000000]f32 } auto output
-entry tridagPar_f32 (a: []f32, b: []f32, c: []f32, y: []f32) =
-  tridagPar_f32 (a,b,c,y)
+-- entry tridagPar_f32 (a: []f32, b: []f32, c: []f32, y: []f32) =
+  -- tridagPar_f32 (a,b,c,y)
