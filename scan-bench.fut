@@ -4,8 +4,8 @@ import "mergesort"
 
 
 -- ==
--- random input { [100000000]i32 } auto output
 -- entry: scanplus_i32
+-- random input { [100000000]i32 } auto output
 entry scanplus_i32 (input:[]i32) =
     scan (+) 0 input
 -- random input { [1000]i32 } auto output
