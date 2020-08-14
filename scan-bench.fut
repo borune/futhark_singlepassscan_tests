@@ -44,3 +44,9 @@ entry mapplus (input:[]i32) =
 entry par_i32 [n] (arr: [n]i32) : ([]i32, []i32) =
     partition (\x -> (x % 2) == 0i32) arr
 
+
+-- ==
+-- entry: radixsort_i32
+-- random input { [1000]i32 } auto output
+
+entry radixsort_i32 = radix_sort_int i32.num_bits i32.get_bit

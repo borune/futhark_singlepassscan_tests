@@ -51,3 +51,14 @@ let radix_sort [n] 't (num_bits: i32) (get_bit: i32 -> t -> i32)
                       (xs: [n]t): [n]t =
   let iters = if n == 0 then 0 else (num_bits+2-1)/2
   in loop xs for i < iters do radix_sort_step xs get_bit (i*2)
+
+-- | A thin wrapper around `radix_sort`@term that ensures negative
+-- integers are sorted as expected.  Simply pass the usual `num_bits`
+-- and `get_bit` definitions from e.g. `i32`@term@"/futlib/math".
+let radix_sort_int [n] 't (num_bits: i32) (get_bit: i32 -> t -> i32)
+                          (xs: [n]t): [n]t =
+  let get_bit' i x =
+    -- Flip the most significant bit.
+    let b = get_bit i x
+    in if i == num_bits-1 then b ^ 1 else b
+  in radix_sort num_bits get_bit' xs
