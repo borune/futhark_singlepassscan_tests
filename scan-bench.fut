@@ -1,5 +1,6 @@
 import "radixsort"
 import "mergesort"
+import "tridagPar"
 
 -- ==
 -- entry: scanplus_i8
