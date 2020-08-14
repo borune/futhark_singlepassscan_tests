@@ -1,4 +1,4 @@
-
+import "radixsort"
 ---- ==
 -- entry: scanplus
 -- random input { [1000]i32 } auto output
