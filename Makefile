@@ -23,6 +23,8 @@ test-scanomap:
 
 benchit:
 	$(FUTHARK) bench --backend=cuda --runs=10 scan-bench.fut
+	$(FUTHARK) bench --backend=cuda --runs=10 scan-bench-i8.fut
+	$(FUTHARK) bench --backend=cuda --runs=10 scan-bench-64.fut
 
 benchcl:
 	$(FUTHARK) bench --backend=opencl --runs=1 scan-bench.fut

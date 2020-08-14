@@ -61,3 +61,9 @@ let tridagPar [n] (a:  [n]f32, b: [n]f32, c: [n]f32, y: [n]f32 ): *[n]f32 =
                  cfuns
   let y    = map (\i -> y[n-i-1]) (iota n)
   in y
+
+-- ==
+-- entry: tridagPar_f32
+-- random input { [1000000]f32 [1000000]f32 [1000000]f32 [1000000]f32 } auto output
+entry tridagPar_f32 (a: []f32, b: []f32, c: []f32, y: []f32) =
+  tridagPar_f32 (a,b,c,y)
