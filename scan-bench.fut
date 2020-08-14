@@ -1,58 +1,146 @@
 import "radixsort"
 import "mergesort"
+
 -- ==
 -- entry: scanplus
--- random input { [1000]i64 } auto output
+-- random input { [1000000]i8 } auto output
+entry scanplus (input:[]i8) =
+    scan (+) 0 input
+-- random input { [1000]i8 } auto output
+-- random input { [10000]i8 } auto output
+-- random input { [100000]i8 } auto output
+-- random input { [10000000]i8 } auto output
+-- random input { [100000000]i8 } auto output
+-- random input { [1000000000]i8 } auto output
+
+-- ==
+-- entry: scanomap
+-- random input { [1000000]i8 } auto output
+entry scanomap (input:[]i8) =
+    let arr = map (*2) input
+    let arr' = scan (+) 0 arr
+    in (arr, arr')
+
+-- ==
+-- entry: mapplus
+-- random input { [1000000]i8 } auto output
+entry mapplus (input:[]i8) =
+    map (+2) input
+
+-- Patition tests
+-- ==
+-- entry: par_i8
+-- random input { [1000000]i8 } auto output
+entry par_i8 [n] (arr: [n]i8) : ([]i8, []i8) =
+    partition (\x -> (x % 2) == 0i8) arr
+
+
+-- ==
+-- entry: radixsort_i8
+-- random input { [1000000]i8 } auto output
+entry radixsort_i8 = radix_sort_int i8.num_bits i8.get_bit
+
+
+-- ==
+-- entry: mergesort_i8
+-- random input { [1000000]i8 } auto output
+entry mergesort_i8 (xs: []i8) = merge_sort (i8.<=) xs
+
+
+
+-- ==
+-- entry: scanplus
+-- random input { [1000000]i32 } auto output
+entry scanplus (input:[]i32) =
+    scan (+) 0 input
+-- random input { [1000]i32 } auto output
+-- random input { [10000]i32 } auto output
+-- random input { [100000]i32 } auto output
+-- random input { [10000000]i32 } auto output
+-- random input { [100000000]i32 } auto output
+-- random input { [1000000000]i32 } auto output
+
+-- ==
+-- entry: scanomap
+-- random input { [1000000]i32 } auto output
+entry scanomap (input:[]i32) =
+    let arr = map (*2) input
+    let arr' = scan (+) 0 arr
+    in (arr, arr')
+
+-- ==
+-- entry: mapplus
+-- random input { [1000000]i32 } auto output
+entry mapplus (input:[]i32) =
+    map (+2) input
+
+-- Patition tests
+-- ==
+-- entry: par_i32
+-- random input { [1000000]i32 } auto output
+entry par_i32 [n] (arr: [n]i32) : ([]i32, []i32) =
+    partition (\x -> (x % 2) == 0i32) arr
+
+
+-- ==
+-- entry: radixsort_i32
+-- random input { [1000000]i32 } auto output
+entry radixsort_i32 = radix_sort_int i32.num_bits i32.get_bit
+
+
+-- ==
+-- entry: mergesort_i32
+-- random input { [1000000]i32 } auto output
+entry mergesort_i32 (xs: []i32) = merge_sort (i32.<=) xs
+
+-- ==
+-- entry: scanplus
+-- random input { [1000000]i64 } auto output
 entry scanplus (input:[]i64) =
     scan (+) 0 input
+-- random input { [1000]i64 } auto output
 -- random input { [10000]i64 } auto output
 -- random input { [100000]i64 } auto output
--- random input { [1000000]i64 } auto output
 -- random input { [10000000]i64 } auto output
 -- random input { [100000000]i64 } auto output
 -- random input { [1000000000]i64 } auto output
 
 -- ==
 -- entry: scanomap
--- random input { [1000]i64 } auto output
+-- random input { [1000000]i64 } auto output
 entry scanomap (input:[]i64) =
     let arr = map (*2) input
     let arr' = scan (+) 0 arr
     in (arr, arr')
--- random input { [10000]i64 } auto output
--- random input { [100000]i64 } auto output
--- random input { [1000000]i64 } auto output
--- random input { [10000000]i64 } auto output
--- random input { [100000000]i64 } auto output
--- random input { [1000000000]i64 } auto output
 
 -- ==
 -- entry: mapplus
--- random input { [1000]i64 } auto output
+-- random input { [1000000]i64 } auto output
 entry mapplus (input:[]i64) =
     map (+2) input
--- random input { [10000]i64 } auto output
--- random input { [100000]i64 } auto output
--- random input { [1000000]i64 } auto output
--- random input { [10000000]i64 } auto output
--- random input { [100000000]i64 } auto output
--- random input { [1000000000]i64 } auto output
 
 -- Patition tests
 -- ==
 -- entry: par_i64
--- random input { [1000]i64 } auto output
+-- random input { [1000000]i64 } auto output
 entry par_i64 [n] (arr: [n]i64) : ([]i64, []i64) =
     partition (\x -> (x % 2) == 0i64) arr
 
 
 -- ==
 -- entry: radixsort_i64
--- random input { [1000]i64 } auto output
+-- random input { [1000000]i64 } auto output
 entry radixsort_i64 = radix_sort_int i64.num_bits i64.get_bit
 
 
 -- ==
 -- entry: mergesort_i64
--- random input { [1000]i64 } auto output
+-- random input { [1000000]i64 } auto output
 entry mergesort_i64 (xs: []i64) = merge_sort (i64.<=) xs
+
+
+-- ==
+-- entry: tridagPar_f32
+-- random input { [1000000]f32 [1000000]f32 [1000000]f32 [1000000]f32 } auto output
+entry tridagPar_f32 (a: []f32, b: []f32, c: []f32, y: []f32) =
+  tridagPar_f32 (a,b,c,y)
