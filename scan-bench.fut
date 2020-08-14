@@ -1,6 +1,6 @@
 import "radixsort"
 import "mergesort"
--- import "tridagpar"
+import "tridagpar"
 
 
 
