@@ -2,9 +2,9 @@ import "radixsort"
 import "mergesort"
 
 -- ==
--- entry: scanplus
+-- entry: scanplus_i8
 -- random input { [1000000]i8 } auto output
-entry scanplus (input:[]i8) =
+entry scanplus_i8 (input:[]i8) =
     scan (+) 0 input
 -- random input { [1000]i8 } auto output
 -- random input { [10000]i8 } auto output
@@ -14,17 +14,17 @@ entry scanplus (input:[]i8) =
 -- random input { [1000000000]i8 } auto output
 
 -- ==
--- entry: scanomap
+-- entry: scanomap_i8
 -- random input { [1000000]i8 } auto output
-entry scanomap (input:[]i8) =
+entry scanomap_i8 (input:[]i8) =
     let arr = map (*2) input
     let arr' = scan (+) 0 arr
     in (arr, arr')
 
 -- ==
--- entry: mapplus
+-- entry: mapplus_i8
 -- random input { [1000000]i8 } auto output
-entry mapplus (input:[]i8) =
+entry mapplus_i8 (input:[]i8) =
     map (+2) input
 
 -- Patition tests
@@ -49,9 +49,9 @@ entry mergesort_i8 (xs: []i8) = merge_sort (i8.<=) xs
 
 
 -- ==
--- entry: scanplus
+-- entry: scanplus_i32
 -- random input { [1000000]i32 } auto output
-entry scanplus (input:[]i32) =
+entry scanplus_i32 (input:[]i32) =
     scan (+) 0 input
 -- random input { [1000]i32 } auto output
 -- random input { [10000]i32 } auto output
@@ -61,17 +61,17 @@ entry scanplus (input:[]i32) =
 -- random input { [1000000000]i32 } auto output
 
 -- ==
--- entry: scanomap
+-- entry: scanomap_i32
 -- random input { [1000000]i32 } auto output
-entry scanomap (input:[]i32) =
+entry scanomap_i32 (input:[]i32) =
     let arr = map (*2) input
     let arr' = scan (+) 0 arr
     in (arr, arr')
 
 -- ==
--- entry: mapplus
+-- entry: mapplus_i32
 -- random input { [1000000]i32 } auto output
-entry mapplus (input:[]i32) =
+entry mapplus_i32 (input:[]i32) =
     map (+2) input
 
 -- Patition tests
@@ -94,9 +94,9 @@ entry radixsort_i32 = radix_sort_int i32.num_bits i32.get_bit
 entry mergesort_i32 (xs: []i32) = merge_sort (i32.<=) xs
 
 -- ==
--- entry: scanplus
+-- entry: scanplus_i64
 -- random input { [1000000]i64 } auto output
-entry scanplus (input:[]i64) =
+entry scanplus_i64 (input:[]i64) =
     scan (+) 0 input
 -- random input { [1000]i64 } auto output
 -- random input { [10000]i64 } auto output
@@ -106,17 +106,17 @@ entry scanplus (input:[]i64) =
 -- random input { [1000000000]i64 } auto output
 
 -- ==
--- entry: scanomap
+-- entry: scanomap_i64
 -- random input { [1000000]i64 } auto output
-entry scanomap (input:[]i64) =
+entry scanomap_i64 (input:[]i64) =
     let arr = map (*2) input
     let arr' = scan (+) 0 arr
     in (arr, arr')
 
 -- ==
--- entry: mapplus
+-- entry: mapplus_i64
 -- random input { [1000000]i64 } auto output
-entry mapplus (input:[]i64) =
+entry mapplus_i64 (input:[]i64) =
     map (+2) input
 
 -- Patition tests
