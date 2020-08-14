@@ -22,6 +22,7 @@ test-scanomap:
 # 	$(FUTHARK) opencl tests/scan/scanomap_2.fut
 
 benchit:
+	$(FUTHARK) -V
 	$(FUTHARK) bench --backend=cuda --runs=10 scan-bench.fut
 	$(FUTHARK) bench --backend=cuda --runs=10 scan-bench-i8.fut
 
