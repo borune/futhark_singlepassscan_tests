@@ -35,7 +35,7 @@ entry par_i8 [n] (arr: [n]i8) : ([]i8, []i8) =
     partition (\x -> (x % 2) == 0i8) arr
 
 
--- ==
+-- =/=
 -- entry: radixsort_i8
 -- random input { [100000000]i8 } auto output
 entry radixsort_i8 = radix_sort_int i8.num_bits i8.get_bit
