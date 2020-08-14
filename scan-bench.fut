@@ -1,4 +1,4 @@
-import "partition2"
+-- import "partition2"
 import "quicksort-flat"
 
 ---- ==
@@ -39,15 +39,15 @@ entry mapplus (input:[]i32) =
 -- random input { [100000000]i32 } auto output
 -- random input { [1000000000]i32 } auto output
 
--- Lifted Patition2 tests
+-- Patition tests
 -- ==
--- entry: par2L_i32
+-- entry: par_i32
 -- random input { [1000]i32 } auto output
-entry par2L_i32 [n] (arr: [n]i32) : (i32, [n]i32) =
-    partition2 (map (\x -> (x % 2) == 0i32) arr) 0i32 arr
+entry par_i32 [n] (arr: [n]i32) : (i32, [n]i32) =
+    partition (map (\x -> (x % 2) == 0i32) arr) arr
 
 -- Lifted Quicksort tests
--- ==
+-- =/=
 -- entry: quicksortInt
 -- random input { [1000]i32 } auto output
 entry quicksortInt [n] (arr: [n]i32) =
